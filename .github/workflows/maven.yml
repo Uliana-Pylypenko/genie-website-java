@@ -53,6 +53,10 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R
 
+      - uses: actions/checkout@v4
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+
     # steps:
     #   - env:
     #       OUTPUT1: ${{needs.build.outputs.output1}}
