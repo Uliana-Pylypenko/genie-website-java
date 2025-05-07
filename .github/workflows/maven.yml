@@ -33,6 +33,9 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
+    - name: Check for the existence of the JAR file
+      run: ls -l target/
+
     - uses: actions/upload-artifact@v4
       id: artifact-upload-step
       with:
