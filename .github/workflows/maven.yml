@@ -56,10 +56,14 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R
 
+      - uses: actions/checkout@v4
+
+      - name: Move JAR file to current directory
+        run: mv webapp-0.0.1-SNAPSHOT.jar .
+
       - name: Display current directory content
         run: ls -l
-
-      - uses: actions/checkout@v4
+      
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 
