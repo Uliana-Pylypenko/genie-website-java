@@ -37,7 +37,7 @@ jobs:
       id: artifact-upload-step
       with:
         name: my-artifact
-        path: path/to/artifact/content/
+        path: target/*.jar
 
 
 
