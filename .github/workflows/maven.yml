@@ -56,9 +56,6 @@ jobs:
       - name: Display structure of downloaded files
         run: ls -R
 
-      - name: Move JAR file to current directory
-        run: mv webapp-0.0.1-SNAPSHOT.jar .
-
       - name: Display current directory content
         run: ls -l
 
