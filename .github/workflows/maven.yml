@@ -60,7 +60,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.28.0
         with:
-          image-ref: 'docker.io/uliana-pylypenko/genie-website-java/my-app:latest'
+          image-ref: 'ghcr.io/uliana-pylypenko/genie-website-java/my-app:latest'
           format: 'table'
           exit-code: '1'
           ignore-unfixed: true
