@@ -56,7 +56,11 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t ghcr.io/uliana-pylypenko/genie-website-java/my-app:latest .
-
+  
+      - name: Push Docker image
+        run: |
+          docker push ghcr.io/uliana-pylypenko/genie-website-java/my-app:latest
+          
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.28.0
         with:
@@ -66,7 +70,3 @@ jobs:
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
-  
-      - name: Push Docker image
-        run: |
-          docker push ghcr.io/uliana-pylypenko/genie-website-java/my-app:latest
